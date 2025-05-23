@@ -120,7 +120,7 @@
         </section>
         <button class="btn btn-primary mt-3" onclick="calcularPedido()"> Calcular Pedido</button>
 
-        <button class="btn btn-vermelho mt-3 w-50 d-block mx-auto" onclick="limparResultado()">Limpar</button>
+        <button class="btn btn-vermelho mt-3 w-50 d-block mx-auto" onclick="limparResultado()">Limpar Pedido</button>
         <section id="resultado">
             <h5 class="mt-4">Resumo do Pedido</h5>
             <table class="table table-bordered mt-3">
@@ -140,27 +140,58 @@
             let comboSelecionado = 0;
             let precoCombo = 0;
             let nomeCombo = "";
+            let botaoSelecionado = null;
             function selecionarCombo(combo) {
-                comboSelecionado = combo; // Armazena o numero do combo selecionado
-                switch (combo) {
-                    case 1:
-                        nomeCombo = "Combo 1 - Hamburguer P, Refrigerante e Fritas";
-                        precoCombo = 20;
-                        break;
-                    case 2:
-                        nomeCombo = "Combo 2 - Hamburguer M, Refrigerante e Fritas";
-                        precoCombo = 42;
-                        break;
-                    case 3:
-                        nomeCombo = "Combo 3 - Hamburguer G, Refrigerante e Fritas";
-                        precoCombo = 56;
-                        break;
+                const botoes = document.querySelectorAll("button[onclick^='selecionarCombo']");
+                const botaoAtual = botoes[combo - 1];
+
+                if (comboSelecionado === combo) {
+                    // Desmarca o combo
+                    botaoAtual.classList.remove("btn-success");
+                    botaoAtual.textContent = "Selecionar";
+                    botaoAtual.disabled = false;
+                    comboSelecionado = 0;
+                    precoCombo = 0;
+                    nomeCombo = "";
+                } else {
+                    // Desmarca o anterior
+                    if (botaoSelecionado) {
+                        botaoSelecionado.classList.remove("btn-success");
+                        botaoSelecionado.textContent = "Selecionar";
+                        botaoSelecionado.disabled = false;
+                    }
+
+                    // Marca o novo
+                    comboSelecionado = combo;
+                    botaoAtual.classList.add("btn-success");
+                    botaoAtual.textContent = "Selecionado";
+                    botaoAtual.disabled = false;
+                    botaoSelecionado = botaoAtual;
+
+                    switch (combo) {
+                        case 1:
+                            nomeCombo = "Combo 1 - Hamburguer P, Refrigerante e Fritas";
+                            precoCombo = 20;
+                            break;
+                        case 2:
+                            nomeCombo = "Combo 2 - Hamburguer M, Refrigerante e Fritas";
+                            precoCombo = 42;
+                            break;
+                        case 3:
+                            nomeCombo = "Combo 3 - Hamburguer G, Refrigerante e Fritas";
+                            precoCombo = 56;
+                            break;
+                    }
                 }
             }
 
             // Função para calcular o pedido
             // e aplicar desconto com base na forma de pagamento
             function calcularPedido() {
+                if (comboSelecionado === 0) {
+                    alert("Por favor, selecione um combo antes de calcular o pedido.");
+                    return;
+                }
                 const quantidade = document.getElementById("quantidade").value;
                 const FormaPagamento = document.getElementById("pagamento").value;
 
@@ -172,20 +203,22 @@
                     total = total * 0.9; // aplica 10% de desconto
                 }
 
+                const desconto = (precoCombo * quantidade) - total;
+
                 // Exibe o resultado 
-                mostrarResultado(quantidade, FormaPagamento, total);
+                mostrarResultado(quantidade, FormaPagamento, total, desconto);
 
             }
 
             // Mostra o resultado na tabela  
-            function mostrarResultado(quantidade, FormaPagamento, total) {
+            function mostrarResultado(quantidade, FormaPagamento, total, desconto) {
                 document.getElementById("tabelaResultado").innerHTML =
                     `
              <tr>
                  <td class="text-center">${nomeCombo}</td>
                  <td class="text-center">${quantidade}</td>
                  <td class="text-center">${FormaPagamento == "dinheiro" ? "Dinheiro" : FormaPagamento == "pix" ? "Pix" : "Cartão"}</td>
-                 <td class="text-center">R$ ${total.toFixed(2)}</td>
+                 <td class="text-center">R$ ${total.toFixed(2)} <br><small>(Desconto: R$ ${desconto.toFixed(2)})</small></td>
              </tr>
           `;
             }
