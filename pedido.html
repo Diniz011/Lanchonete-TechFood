@@ -1,92 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-techfood.png">
+    <title>TechFood | Lanches Rápidos e Saborosos</title>
+    <meta property="og:title" content="TechFood | Lanches Rápidos e Saborosos">
+    <meta property="og:description" content="Conheça os melhores combos da cidade! Hamburgueres, fritas e muito mais.">
+    <meta property="og:image" content="https://img.icons8.com/ios-filled/240/ffffff/hamburger.png">
+    <meta property="og:url" content="https://diniz011.github.io/Lanchonete-TechFood/">
+    <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-    <style>
-    .btn-vermelho{
+<style>
+    .btn-vermelho {
         background-color: #c0392b;
         color: #fff;
         font-weight: bold;
         border-radius: 10px;
         padding: 10px;
         transition: 0.3s;
-        
+
     }
-    .btn-vermelho:hover{
+
+    .btn-vermelho:hover {
         background-color: #e74c3c;
 
-    }    
-    </style> 
+    }
+</style>
 
 
 </head>
+
 <body>
 
-     <!-- Menu Superior-->
-     <header></header>
-         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/hamburger.png" alt="Logo" width="30" height="30" class="me-2">
-            <span>TechFood</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="pedido.html">Pedido</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
-            </ul>
+    <!-- Menu Superior-->
+    <header></header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/hamburger.png" alt="Logo" width="30" height="30"
+                    class="me-2">
+                <span>TechFood</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pedido.html">Pedido</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     </header>
     <main></main>
     <!--Conteúdo-->
-     <div class="container mt-4">
+    <div class="container mt-4">
         <h2 class="text-center text-primary mb-4">Monte seu Pedido</h2>
 
         <section class="row" id="combos">
             <div class="col-md-4 mb-3">
-                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Combo 1" class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90" alt="Combo 1"
+                        class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">Combo 1</h5>
                         <p class="card-text">Hamburguer P, Refrigerante e Fritas</p>
                         <p class="card-text">R$ 20,00</p>
                         <button class="btn btn-primary" onclick="selecionarCombo(1)">Selecionar</button>
-                    </div>    
+                    </div>
 
-                 </article>
+                </article>
             </div>
             <div class="col-md-4 mb-3">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Combo 2" class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Combo 2"
+                        class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">Combo 2</h5>
                         <p class="card-text">Hamburguer M, Refrigerante e Fritas</p>
                         <p class="card-text">R$ 42,00</p>
                         <button class="btn btn-primary" onclick="selecionarCombo(2)">Selecionar</button>
-                    </div> 
+                    </div>
                 </article>
             </div>
             <div class="col-md-4 mb-3">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Combo 3" class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Combo 3"
+                        class="img-fluid rounded" width="100%" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">Combo 3</h5>
                         <p class="card-text">Hamburguer G, Refrigerante e Fritas</p>
                         <p class="card-text">R$ 56,00</p>
                         <button class="btn btn-primary" onclick="selecionarCombo(3)">Selecionar</button>
-                    </div> 
-                
+                    </div>
+
             </div>
 
         </section>
@@ -94,7 +109,7 @@
         <section id="formPedido" class="mt-4">
             <h4>Detalhes do Pedido</h4>
             <label for="quantidade" class="form-label">Quantidade</label>
-            <input id="quantidade" type="number" class="form-control" min="1" required>    
+            <input id="quantidade" type="number" class="form-control" min="1" required>
             <label for="pagamento" class="form-label">Forma de pagamento</label>
             <select id="pagamento" class="form-select" required>
                 <option value="" disabled selected>Selecione</option>
@@ -103,9 +118,9 @@
                 <option value="pix">Pix 10% de Desconto</option>
             </select>
         </section>
-            <button class="btn btn-primary mt-3" onclick="calcularPedido()"> Calcular Pedido</button>
-        
-        <button class="btn btn-vermelho mt-3 w-50 d-block mx-auto" onclick="limparResultado()">Limpar</button>    
+        <button class="btn btn-primary mt-3" onclick="calcularPedido()"> Calcular Pedido</button>
+
+        <button class="btn btn-vermelho mt-3 w-50 d-block mx-auto" onclick="limparResultado()">Limpar</button>
         <section id="resultado">
             <h5 class="mt-4">Resumo do Pedido</h5>
             <table class="table table-bordered mt-3">
@@ -118,54 +133,54 @@
                     </tr>
                 </thead>
                 <tbody id="tabelaResultado">
-                </tbody>    
+                </tbody>
             </table>
-        </section>   
-    <script>
-      let comboSelecionado=0;
-      let precoCombo=0;
-      let nomeCombo="";
-      function selecionarCombo(combo){
-        comboSelecionado=combo; // Armazena o numero do combo selecionado
-        switch(combo){
-            case 1:
-                nomeCombo="Combo 1 - Hamburguer P, Refrigerante e Fritas";
-                precoCombo=20;
-                break;
-            case 2:
-                nomeCombo="Combo 2 - Hamburguer M, Refrigerante e Fritas";
-                precoCombo=42;
-                break;
-            case 3:
-                nomeCombo="Combo 3 - Hamburguer G, Refrigerante e Fritas";
-                precoCombo=56;
-                break;
-        }
-      }
-      
-      // Função para calcular o pedido
-      // e aplicar desconto com base na forma de pagamento
-      function calcularPedido(){
-        const quantidade=document.getElementById("quantidade").value;
-        const FormaPagamento=document.getElementById("pagamento").value;
+        </section>
+        <script>
+            let comboSelecionado = 0;
+            let precoCombo = 0;
+            let nomeCombo = "";
+            function selecionarCombo(combo) {
+                comboSelecionado = combo; // Armazena o numero do combo selecionado
+                switch (combo) {
+                    case 1:
+                        nomeCombo = "Combo 1 - Hamburguer P, Refrigerante e Fritas";
+                        precoCombo = 20;
+                        break;
+                    case 2:
+                        nomeCombo = "Combo 2 - Hamburguer M, Refrigerante e Fritas";
+                        precoCombo = 42;
+                        break;
+                    case 3:
+                        nomeCombo = "Combo 3 - Hamburguer G, Refrigerante e Fritas";
+                        precoCombo = 56;
+                        break;
+                }
+            }
 
-        let total = precoCombo * quantidade;
+            // Função para calcular o pedido
+            // e aplicar desconto com base na forma de pagamento
+            function calcularPedido() {
+                const quantidade = document.getElementById("quantidade").value;
+                const FormaPagamento = document.getElementById("pagamento").value;
 
-        if(FormaPagamento == "dinheiro"){
-            total = total * 0.8; // aplica 20% de desconto
-        } else if (FormaPagamento == "pix") {
-            total = total * 0.9; // aplica 10% de desconto
-        }
+                let total = precoCombo * quantidade;
 
-    // Exibe o resultado 
-     mostrarResultado(quantidade,FormaPagamento,total);
-    
-      }
-      
-    // Mostra o resultado na tabela  
-      function mostrarResultado(quantidade, FormaPagamento, total) {
-        document.getElementById("tabelaResultado").innerHTML =
-          `
+                if (FormaPagamento == "dinheiro") {
+                    total = total * 0.8; // aplica 20% de desconto
+                } else if (FormaPagamento == "pix") {
+                    total = total * 0.9; // aplica 10% de desconto
+                }
+
+                // Exibe o resultado 
+                mostrarResultado(quantidade, FormaPagamento, total);
+
+            }
+
+            // Mostra o resultado na tabela  
+            function mostrarResultado(quantidade, FormaPagamento, total) {
+                document.getElementById("tabelaResultado").innerHTML =
+                    `
              <tr>
                  <td class="text-center">${nomeCombo}</td>
                  <td class="text-center">${quantidade}</td>
@@ -173,26 +188,30 @@
                  <td class="text-center">R$ ${total.toFixed(2)}</td>
              </tr>
           `;
-      }
-      function limparResultado() {
-          document.getElementById("tabelaResultado").innerHTML = "";
-      }
-    </script> 
-     
-        </div>
+            }
+            function limparResultado() {
+                document.getElementById("tabelaResultado").innerHTML = "";
+            }
+        </script>
+
+    </div>
     </main>
 
-     <!-- Rodapé-->
-     <footer class="bg-dark text-white py-4 mt-auto">
-    <div class="container text-center">
-        <p class="mb-2">&copy; 2025 TechFood. Todos os direitos reservados.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" width="30"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter" width="30"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" width="30"></a>
+    <!-- Rodapé-->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2025 TechFood. Todos os direitos reservados.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"
+                        width="30"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter"
+                        width="30"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"
+                        width="30"></a>
+            </div>
         </div>
-    </div>
-</footer>
-    
+    </footer>
+
 </body>
+
 </html>

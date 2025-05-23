@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-techfood.png">
+    <title>TechFood | Lanches Rápidos e Saborosos</title>
+    <meta property="og:title" content="TechFood | Lanches Rápidos e Saborosos">
+    <meta property="og:description" content="Conheça os melhores combos da cidade! Hamburgueres, fritas e muito mais.">
+    <meta property="og:image" content="https://img.icons8.com/ios-filled/240/ffffff/hamburger.png">
+    <meta property="og:url" content="https://diniz011.github.io/Lanchonete-TechFood/">
+    <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -14,23 +20,25 @@
     <!--Menu Superior-->
     <header></header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/hamburger.png" alt="Logo" width="30" height="30" class="me-2">
-            <span>TechFood</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="pedido.html">Pedido</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
-            </ul>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/hamburger.png" alt="Logo" width="30" height="30"
+                    class="me-2">
+                <span>TechFood</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pedido.html">Pedido</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     </header>
     <main>
 
@@ -57,7 +65,7 @@
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                     <script>
-                        function mostrarinformacoes(event){
+                        function mostrarinformacoes(event) {
                             // Impedir o envio real do formulário
                             event.preventDefault();
                             const nome = document.getElementById('nome').value;
@@ -109,15 +117,19 @@
 
     <!--Rodapé-->
     <footer class="bg-dark text-white py-4 mt-auto">
-    <div class="container text-center">
-        <p class="mb-2">&copy; 2025 TechFood. Todos os direitos reservados.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" width="30"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter" width="30"></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" width="30"></a>
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2025 TechFood. Todos os direitos reservados.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"
+                        width="30"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter"
+                        width="30"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"
+                        width="30"></a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>
