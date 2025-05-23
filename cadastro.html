@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - TechFood</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-techfood.png">
+    <meta property="og:title" content="TechFood | Lanches Rápidos e Saborosos">
+    <meta property="og:description" content="Conheça os melhores combos da cidade! Hamburgueres, fritas e muito mais.">
+    <meta property="og:image" content="https://img.icons8.com/ios-filled/240/ffffff/hamburger.png">
+    <meta property="og:url" content="https://diniz011.github.io/Lanchonete-TechFood/">
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .form-container {
+        border: 1px solid #ccc;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/hamburger.png" alt="Logo" width="30" height="30" class="me-2">
+        <span>TechFood</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pedido.html">Pedido</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main class="flex-grow-1 container mt-4">
+    <h2 class="text-center text-primary mb-4">Cadastre-se no TechFood</h2>
+    <div class="form-container mx-auto" style="max-width: 500px;">
+      <form id="cadastroForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Nome:</label>
+          <input type="text" id="firstName" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Sobrenome:</label>
+          <input type="text" id="lastName" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha:</label>
+          <input type="password" id="password" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="cep" class="form-label">CEP:</label>
+          <input type="text" id="cep" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Endereço:</label>
+          <input type="text" id="address" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="complement" class="form-label">Complemento:</label>
+          <input type="text" id="complement" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">Cidade:</label>
+          <input type="text" id="city" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="state" class="form-label">Estado:</label>
+          <input type="text" id="state" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        <div class="text-center my-3">
+          <span class="text-muted">ou cadastre-se com</span>
+        </div>
+        <div class="d-grid gap-2 mb-3">
+          <button type="button" class="btn btn-outline-danger" id="btnGoogle">
+            <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="me-2" /> Google
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-2">&copy; 2025 TechFood. Todos os direitos reservados.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" width="30" alt="Facebook"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" width="30" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" width="30" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+  import { GoogleAuthProvider, OAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDkPZbdlkY0e4m4YCsmaKvewsvniGappnk",
+    authDomain: "techfood-9f80f.firebaseapp.com",
+    projectId: "techfood-9f80f",
+    storageBucket: "techfood-9f80f.firebasestorage.app",
+    messagingSenderId: "708523842876",
+    appId: "1:708523842876:web:d3beaaabab58fae8f1d239",
+    measurementId: "G-NEDZH5J4ZB"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  const auth = getAuth();
+  const form = document.getElementById("cadastroForm");
+
+  // Busca automática de endereço via CEP
+  document.getElementById("cep").addEventListener("blur", () => {
+    const cep = document.getElementById("cep").value.replace(/\D/g, '');
+    if (cep.length !== 8) {
+      return;
+    }
+
+    axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((response) => {
+        const data = response.data;
+        if (!data.erro) {
+          document.getElementById("address").value = data.logradouro || '';
+          document.getElementById("city").value = data.localidade || '';
+          document.getElementById("state").value = data.uf || '';
+        } else {
+          alert("CEP não encontrado.");
+        }
+      })
+      .catch(() => {
+        alert("Erro ao buscar o CEP.");
+      });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert("Erro no cadastro: " + error.message);
+      });
+  });
+
+  document.getElementById("btnGoogle").addEventListener("click", () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        alert("Login com Google realizado!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert("Erro no login com Google: " + error.message);
+      });
+  });
+</script>
+</body>
+</html>
